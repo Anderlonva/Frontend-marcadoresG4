@@ -1,16 +1,16 @@
 import { axiosInstance } from "../helpers/axios-config";
 
-const getEquipos = () => {
-    return axiosInstance.get('equipo', { 
+const getDeportes = () => {
+    return axiosInstance.get('deporte', { 
         headers: {
             'Content-type': 'application/json'   
         }
     })
 }
 
-const postEquipos = (data) => {
+const postDeporte = (data) => {
 
-    const respuesta = axiosInstance.post('equipo', data, { 
+    const respuesta = axiosInstance.post('deporte', data, { 
         headers: {
             'Content-type': 'application/json'   
         }
@@ -19,9 +19,9 @@ const postEquipos = (data) => {
     return respuesta;
 };
 
-const putEquipo = (equipoid, data) => {
+const putDeporte = (deporteid, data) => {
 
-    const respuesta = axiosInstance.put(`equipo/${equipoid}`, data, { 
+    const respuesta = axiosInstance.put(`deporte/${deporteid}`, data, { 
         headers: {
             'Content-type': 'application/json'   
         }
@@ -30,9 +30,9 @@ const putEquipo = (equipoid, data) => {
     return respuesta;
 };
 
-const getEquipoId = (tipoEquipoId) => {
+const getDeporteId = (deporteId) => {
 
-    const respuesta = axiosInstance.get(`equipo/${tipoEquipoId}`, { 
+    const respuesta = axiosInstance.get(`deporte/${deporteId}`, { 
         headers: {
             'Content-type': 'application/json'   
         }
@@ -44,8 +44,8 @@ const getEquipoId = (tipoEquipoId) => {
 
 
 export {
-    getEquipos,
-    postEquipos,
-    putEquipo,
-    getEquipoId
+    getDeportes,
+    postDeporte,
+    putDeporte,
+    getDeporteId
 }

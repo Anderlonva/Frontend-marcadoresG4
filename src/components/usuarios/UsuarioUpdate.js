@@ -20,7 +20,7 @@ export const UsuarioUpdate = () => {
             swal.showLoading();
             const { data } = await getUsuarioId(usuarioId);
             console.log(data);
-            setUsuario(data) // se le agrega la data a inventario
+            setUsuario(data) // se le agrega la data a usuario
             swal.close()
         } catch (error) {
             console.log(error);
@@ -52,7 +52,7 @@ export const UsuarioUpdate = () => {
       const handleOnSubmit = async (e) => { // ESTEEEEEEEEEEEE
         e.preventDefault();
         const usuarioUpdate = {
-            nombre,email,estado
+            nombre,apellido,email,estado
         }
       
         try {
