@@ -7,6 +7,8 @@ import { UsuarioView } from './components/usuarios/UsuarioView'
 import { EquipoView }  from './components/equipos/EquipoView'
 import { UsuarioUpdate } from './components/usuarios/UsuarioUpdate'
 import { EventoUpdate } from "./components/eventos/EventoUpdate";
+import { EquipoUpdate } from './components/equipos/EquipoUpdate'
+import { EquipoCreate } from './components/equipos/EquipoCreate'
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
                 <Route exact path="/equipos" component={ EquipoView }/>
                 <Route exact path="/evento/edit/:eventoId" component={ EventoUpdate }/> 
                 <Route exact path="/usuario/edit/:usuarioId" component={ UsuarioUpdate }/>
+                <Route exact path="/equipo/edit/:equipoId" component={ EquipoUpdate }/>
+                <Route exact path="/equipo/create" component={ EquipoCreate }/>
                 <Redirect to='/'/>
             </Switch>
         </Router>
