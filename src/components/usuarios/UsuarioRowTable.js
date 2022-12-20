@@ -2,9 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export const UsuarioRowTable = ({ usuario }) => {
+    
     return (
         <tr>
-
+            <td><img className='img-usuario' src={usuario.foto} alt=''></img></td>
             <td>{usuario.nombre}</td>
             <td>{usuario.apellido}</td>
             <td>{usuario.email}</td>

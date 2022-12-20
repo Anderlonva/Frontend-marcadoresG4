@@ -1,6 +1,6 @@
 import { axiosInstance } from "../helpers/axios-config";
 
-const getEquipo = () => {
+const getEquipos = () => {
     return axiosInstance.get('equipo', { 
         headers: {
             'Content-type': 'application/json'   
@@ -8,7 +8,7 @@ const getEquipo = () => {
     })
 }
 
-const postEquipo = (data) => {
+const postEquipos = (data) => {
 
     const respuesta = axiosInstance.post('equipo/', data, { 
         headers: {
@@ -52,8 +52,8 @@ const deleteEquipo = (equipoId) => {
 
 
 export {
-    getEquipo,
-    postEquipo,
+    getEquipos,
+    postEquipos,
     putEquipo,
     getEquipoId,
     deleteEquipo
