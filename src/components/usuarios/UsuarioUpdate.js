@@ -7,20 +7,20 @@ import swal from 'sweetalert2';
 export const UsuarioUpdate = () => {
 
     const { usuarioId = '' } = useParams();
-    const [usuario, setUsuario] = useState({})
-    const [valoresForm, setValoresForm] = useState({})
-    const { nombre = '', apellido = '', email = '', foto = '', estado = '' } = valoresForm
+    const [ usuario, setUsuario ] = useState({})
+    const [ valoresForm, setValoresForm ] = useState({})
+    const { nombre = '', apellido= '', email = '', estado = '' } = valoresForm
 
     const getUsuario = async () => {
         try {
             swal.fire({ // sirve para mostrar alerta de cargando 
-                allowOutsideClick: false,
+                allowOutsideClick:false,
                 text: 'Cargando...'
             });
             swal.showLoading();
             const { data } = await getUsuarioId(usuarioId);
             console.log(data);
-            setUsuario(data) // se le agrega la data a usuario
+            setUsuario(data) // se le agrega la data a inventario
             swal.close()
         } catch (error) {
             console.log(error);
@@ -34,50 +34,49 @@ export const UsuarioUpdate = () => {
 
     useEffect(() => {
         if (usuario) {
-            setValoresForm({  // con este recuperamos los datos del activo 
-                nombre: usuario.nombre,
-                apellido: usuario.apellido,
-                email: usuario.email,
-                foto: usuario.foto,
-                estado: usuario.estado,
-
-            })
+          setValoresForm({  // con este recuperamos los datos del activo 
+            nombre: usuario.nombre,
+            apellido: usuario.apellido,
+            email: usuario.email,
+            estado: usuario.estado,
+      
+          })
         }
-    }, [usuario])
+      }, [usuario])
 
-    const handleOnChange = ({ target }) => { // va a recibir los valores de los input del formulario
+      const handleOnChange = ({ target }) => { // va a recibir los valores de los input del formulario
         const { name, value } = target
         setValoresForm({ ...valoresForm, [name]: value }) //... spread llama todo lo que tiene el array
     }
 
-    const handleOnSubmit = async (e) => { // ESTEEEEEEEEEEEE
+      const handleOnSubmit = async (e) => { // ESTEEEEEEEEEEEE
         e.preventDefault();
         const usuarioUpdate = {
-            nombre, apellido, email, foto, estado
+            nombre,email,estado
         }
-
+      
         try {
             swal.fire({ // sirve para mostrar alerta de cargando 
                 allowOutsideClick: false,
                 text: 'Cargando...'
             });
             swal.showLoading(); // se llama la alerta de cargando
-            const { data } = await putUsuario(usuarioId, usuarioUpdate)
+            const { data } = await putUsuario(usuarioId, usuarioUpdate )
             console.log(data);
             swal.close();
-
+      
         } catch (error) {
             console.log(error);
             swal.close();
             let mensaje;
-            if (error && error.response && error.response.data) {
+            if (error && error.response && error.response.data ) {
                 mensaje = error.response.data
-            } else {
+            }else{
                 mensaje = 'Ocurrio un error por favor intente de nuevo'
             }
-            swal.fire('Error', mensaje, 'error')
+            swal.fire('Error',mensaje,'error')
         }
-    }
+      }
 
 
     return (
@@ -104,20 +103,10 @@ export const UsuarioUpdate = () => {
                                             onChange={(e) => handleOnChange(e)} className="form-control" />
                                     </div>
                                 </div>
-                                <div className='col-4'>
+                                <div className='col-3'>
                                     <div className="mb-3">
                                         <label className="form-label">Email</label>
                                         <input type="text" name='email' value={email} required
-                                            onChange={(e) => handleOnChange(e)} className="form-control" />
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div className='row'>
-                                <div className='col-5'>
-                                    <div className="mb-3">
-                                        <label className="form-label">Foto</label>
-                                        <input type="text" name='foto' value={foto} required
                                             onChange={(e) => handleOnChange(e)} className="form-control" />
                                     </div>
                                 </div>
@@ -132,14 +121,14 @@ export const UsuarioUpdate = () => {
                                     </select>
                                 </div>
                             </div>
-                            <div className='row mt-3'>
-                                <div className='col-1'>
-                                    <button className="btn btn-secondary">Guardar</button>
-                                </div>
-                                <div className='col-1'>
+                            <div className='row'>
+                                    <div className='col-1'>
+                                        <button className="btn btn-secondary">Guardar</button>
+                                    </div>
+                                    <div className='col-1'>
                                     <a type="button" className="btn btn-danger" href='/usuarios'>Salir</a>
+                                    </div>
                                 </div>
-                            </div>
                         </form>
                     </div>
                 </div>
@@ -147,3 +136,4 @@ export const UsuarioUpdate = () => {
         </div>
     )
 }
+
