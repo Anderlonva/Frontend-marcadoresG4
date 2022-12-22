@@ -9,7 +9,7 @@ let cookies = new Cookies()
 
 const url = "http://localhost:5000/usuario"
 
-const imgAvatar = cookies.get("foto") === "empty" ? <i className="ri-user-line mx-1"></i> : <img className="img-avatar" src={cookies.get("foto")} ></img>
+const imgAvatar = cookies.get("foto") === "" ? <i className="ri-user-line mx-1"></i> : <img className="img-avatar" src={cookies.get("foto")} ></img>
 
 class HeaderAdmin extends Component { 
   state={

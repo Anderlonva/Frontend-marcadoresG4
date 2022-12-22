@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { getEquipos } from '../../services/equipoService';
 import { EquipoRowTable } from './EquipoRowTable';
 import { Link } from 'react-router-dom';
-import { Header } from '../../components/ui/Header';
+import  Header  from '../../components/ui/HeaderImg';
 
 export const EquipoView = () => {
 

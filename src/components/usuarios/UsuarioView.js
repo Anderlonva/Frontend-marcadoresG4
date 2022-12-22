@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getUsuarios } from '../../services/usuarioService';
 import { UsuarioRowTable } from './UsuarioRowTable';
-import { Header } from '../ui/Header';
+import  Header  from '../ui/HeaderImg';
 
 export const UsuarioView = () => {
 
