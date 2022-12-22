@@ -129,6 +129,7 @@ export const EventoUpdate = ({ handleOpenModal, listarEventos }) => {
             swal.showLoading(); // se llama la alerta de cargando
             const { data } = await putEventos(eventoId, evento)
             console.log(data);
+            alert("Evento modificado con exito!")
             swal.close();
 
         } catch (error) {

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { getEquipos } from '../../services/equipoService';
 import { EquipoRowTable } from './EquipoRowTable';
 import { Link } from 'react-router-dom';
+import { Header } from '../../components/ui/Header';
 
 export const EquipoView = () => {
 
@@ -16,27 +17,21 @@ export const EquipoView = () => {
       console.log(error)
     }
   }
-  /*const eliminarEquipo = async () =>{
-    try {
-      const usuario = await equipos.findByIdAndDelete(
-        {_id:equipos.id}
-    )
-    res.json({
-        message: 'Usuario eliminado con exito!'
-    }) 
-    } catch (error) {
-      console.log(error)
-    }
-    return eliminarEquipo()
-  }*/
 
   useEffect(() => {
     listarEquipos()
   }, [])
 
   return (
+    <>
     
+   <Header/>
     <div className='container'>
+      <div className='row text-center'>
+        <div className='col'>
+        <Link type="button" className="btn btn-primary mt-3" to={`equipo/create`}>Agregar nuevo equipo</Link> 
+        </div>
+      </div>
       <div className='row mt-5'>
         <table className="table table-striped">
           <thead>
@@ -58,11 +53,11 @@ export const EquipoView = () => {
                 return <EquipoRowTable key={equipo._id} equipo={equipo} equipos={equipos}/>
               })
             }
-          </tbody>
-          <Link type="button" className="btn btn-primary mt-3" to={`equipo/create`}>Agregar nuevo equipo</Link>          
+          </tbody>         
         </table>
       </div>
     </div>
+    </>
   )
 }
 

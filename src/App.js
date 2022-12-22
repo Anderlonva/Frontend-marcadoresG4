@@ -1,7 +1,6 @@
 
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import { Header } from './components/ui/Header';
 import { Footer } from "./components/ui/Footer";
 import { EventoView } from './components/eventos/EventoView'; 
 import { UsuarioView } from './components/usuarios/UsuarioView'
@@ -10,20 +9,26 @@ import { UsuarioUpdate } from './components/usuarios/UsuarioUpdate'
 import { EventoUpdate } from "./components/eventos/EventoUpdate";
 import { EquipoUpdate } from './components/equipos/EquipoUpdate'
 import { EquipoCreate } from './components/equipos/EquipoCreate'
+import {Inicio} from "./components/InicioSesion/Inicio"
+import { Registro } from "./components/InicioSesion/Registro"
+import { AppCliente } from "./components/ui/AppCliente";
 
 function App() {
   return (
     <>
-      <Header/>
+      
       <Router>
             <Switch>
-                <Route exact path="/" component={ EventoView } />
+                <Route exact path="/" component={ Inicio } />
+                <Route exact path="/registro" component={ Registro } />
+                <Route exact path="/eventos" component={ EventoView } />
                 <Route exact path="/usuarios" component={ UsuarioView }/>
                 <Route exact path="/equipos" component={ EquipoView }/>
                 <Route exact path="/evento/edit/:eventoId" component={ EventoUpdate }/> 
                 <Route exact path="/usuario/edit/:usuarioId" component={ UsuarioUpdate }/>
                 <Route exact path="/equipo/edit/:equipoId" component={ EquipoUpdate }/>
                 <Route exact path="/equipo/create" component={ EquipoCreate }/>
+                <Route exact path="/eventos-clientes" component={ AppCliente }/>
                 <Redirect to='/'/>
             </Switch>
         </Router>

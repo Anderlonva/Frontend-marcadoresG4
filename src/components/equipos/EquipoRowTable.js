@@ -14,7 +14,7 @@ export const EquipoRowTable = ({ equipo }) => {
             <td>{equipo.fechaActualizacion}</td>
 
             <td><Link type="button" className="btn btn-success" to={`equipo/edit/${equipo._id}`}>Editar</Link></td>
-            <td><input type="button" className="btn btn-danger" value="Eliminar"/></td>
+            
 
         </tr>
     )

@@ -127,8 +127,10 @@ export const EventoNew = ({ handleOpenModal, listarEventos }) => {
                     <option value="">--Seleccione--</option>
                     {
                       equipos.map((equipo) => {
-                        return <option key={equipo._id} value={equipo._id} >
+                        if (equipo.estado !== 'Inactivo' ) {
+                          return <option key={equipo._id} value={equipo._id} >
                           {equipo.nombre}</option>
+                        }
                       })
                     }
                   </select>
@@ -143,8 +145,10 @@ export const EventoNew = ({ handleOpenModal, listarEventos }) => {
                     <option value="">--Seleccione--</option>
                     {
                       equipos.map((equipo) => {
-                        return <option key={equipo._id} value={equipo._id} >
+                        if (equipo.estado !== 'Inactivo' ) {
+                          return <option key={equipo._id} value={equipo._id} >
                           {equipo.nombre}</option>
+                        }
                       })
                     }
                   </select>
@@ -186,8 +190,10 @@ export const EventoNew = ({ handleOpenModal, listarEventos }) => {
                     <option value="">--Seleccione--</option>
                     {
                       deportes.map((deporte) => {
-                        return <option key={deporte._id} value={deporte._id} >
+                        if(deporte.estado !== 'Inactivo'){
+                          return <option key={deporte._id} value={deporte._id} >
                           {deporte.nombre} </option>
+                        }
                       })
                     }
 
@@ -203,8 +209,10 @@ export const EventoNew = ({ handleOpenModal, listarEventos }) => {
                     <option value="">--Seleccione--</option>
                     {
                       usuarios.map((usuario) => {
-                        return <option key={usuario._id} value={usuario._id} >
+                        if(usuario.estado !== 'Inactivo'){
+                          return <option key={usuario._id} value={usuario._id} >
                           {usuario.nombre} {usuario.apellido}</option>
+                        }
                       })
                     }
 

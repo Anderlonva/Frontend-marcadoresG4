@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getUsuarios } from '../../services/usuarioService';
 import { UsuarioRowTable } from './UsuarioRowTable';
+import { Header } from '../ui/Header';
 
 export const UsuarioView = () => {
 
@@ -24,6 +25,7 @@ export const UsuarioView = () => {
 
   return (
     <>
+    <Header/>
     <div className='container'>
     <div className='row mt-5'>
             <table className="table table-striped">

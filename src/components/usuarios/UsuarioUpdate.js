@@ -64,6 +64,7 @@ export const UsuarioUpdate = () => {
             swal.showLoading(); // se llama la alerta de cargando
             const { data } = await putUsuario(usuarioId, usuarioUpdate)
             console.log(data);
+            alert("Usuario modificado con exito!")
             swal.close();
 
         } catch (error) {
