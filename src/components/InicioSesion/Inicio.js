@@ -4,6 +4,7 @@ import swal from 'sweetalert2';
 import Swal from 'sweetalert2';
 import { LoginCarrusel } from '../ui/LoginCarrusel'
 import { postLogin } from '../../services/usuarioService';
+import { Footer } from '../ui/Footer';
 
 
 
@@ -99,7 +100,12 @@ export const Inicio = () => {
 
       <div className='row mt-5'>
         <div className='col-6 mtt'>
-          <LoginCarrusel />
+        <img
+        src="https://images.unsplash.com/photo-1602211844066-d3bb556e983b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1113&q=80"
+        alt="HomePage"
+        className='img-inicio'
+      >
+      </img>
         </div>
         <div className='col-4'>
           <div className="container-login">
@@ -138,7 +144,7 @@ export const Inicio = () => {
           </div>
         </div>
       </div>
-
+      <Footer />
     </div>
 
   )
