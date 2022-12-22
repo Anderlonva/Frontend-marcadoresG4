@@ -3,7 +3,7 @@ import { getEventos } from '../../services/eventoService'
 import swal from 'sweetalert2';
 import { EventoCard } from './EventoCard';
 import  { EventoNew } from './EventoNew';
-import { Header } from '../../components/ui/Header';
+import  HeaderAdmin  from '../ui/HeaderImg';
 
 
 export const EventoView = () => {
@@ -38,7 +38,7 @@ export const EventoView = () => {
 
   return (
     <>
-    <Header/>
+    <HeaderAdmin/>
       <div className='container'>
         <div className="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-4 mb-3">
           {

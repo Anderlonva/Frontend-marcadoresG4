@@ -5,8 +5,9 @@ import Swal from 'sweetalert2';
 import { LoginCarrusel } from '../ui/LoginCarrusel'
 import { postLogin } from '../../services/usuarioService';
 import { Footer } from '../ui/Footer';
+import Cookies from 'universal-cookie';
 
-
+const cookies = new Cookies();
 
 export const Inicio = () => {
 
@@ -54,6 +55,16 @@ export const Inicio = () => {
               window.location.href = "../eventos"//../eventos-clientes"
             }
           })
+          cookies.set('id', usuarioExiste._id, {path: "/"})
+          cookies.set('nombre', usuarioExiste.nombre, {path: "/"})
+          cookies.set('apellido', usuarioExiste.apellido, {path: "/"})
+          cookies.set('email', usuarioExiste.email, {path: "/"})
+          cookies.set('password', usuarioExiste.password, {path: "/"})
+          cookies.set('foto', usuarioExiste.foto, {path:"/"})
+          cookies.set('estado', usuarioExiste.estado, {path:"/"})
+          cookies.set('rol', usuarioExiste.rol, {path:"/"})
+          cookies.set('fechaCreacion', usuarioExiste.fechaCreacion, {path: "/"})
+          cookies.set('fechaActualizacion', usuarioExiste.fechaActualizacion, {path: "/"})
         }
       
       if (token === true && usuarioExiste.rol === 'Admin') {
@@ -76,6 +87,17 @@ export const Inicio = () => {
               window.location.href = "../eventos"
             }
           })
+
+          cookies.set('id', usuarioExiste._id, {path: "/"})
+          cookies.set('nombre', usuarioExiste.nombre, {path: "/"})
+          cookies.set('apellido', usuarioExiste.apellido, {path: "/"})
+          cookies.set('email', usuarioExiste.email, {path: "/"})
+          cookies.set('password', usuarioExiste.password, {path: "/"})
+          cookies.set('foto', usuarioExiste.foto, {path:"/"})
+          cookies.set('estado', usuarioExiste.estado, {path:"/"})
+          cookies.set('rol', usuarioExiste.rol, {path:"/"})
+          cookies.set('fechaCreacion', usuarioExiste.fechaCreacion, {path: "/"})
+          cookies.set('fechaActualizacion', usuarioExiste.fechaActualizacion, {path: "/"})
         }
         
 

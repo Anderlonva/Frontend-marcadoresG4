@@ -11,7 +11,7 @@ import { EquipoUpdate } from './components/equipos/EquipoUpdate'
 import { EquipoCreate } from './components/equipos/EquipoCreate'
 import {Inicio} from "./components/InicioSesion/Inicio"
 import { Registro } from "./components/InicioSesion/Registro"
-import { AppCliente } from "./components/ui/AppCliente";
+
 
 function App() {
   return (
@@ -28,7 +28,6 @@ function App() {
                 <Route exact path="/usuario/edit/:usuarioId" component={ UsuarioUpdate }/>
                 <Route exact path="/equipo/edit/:equipoId" component={ EquipoUpdate }/>
                 <Route exact path="/equipo/create" component={ EquipoCreate }/>
-                <Route exact path="/eventos-clientes" component={ AppCliente }/>
                 <Redirect to='/'/>
             </Switch>
         </Router>
