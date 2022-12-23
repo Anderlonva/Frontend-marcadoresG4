@@ -7,7 +7,7 @@ import axios from 'axios'
 
 let cookies = new Cookies()
 
-const url = "http://localhost:5000/usuario"
+const url = process.env.REACT_APP_URL_BACKEND +"usuario"
 
 const imgAvatar = cookies.get("foto") === "" ? <i className="ri-user-line mx-1"></i> : <img className="img-avatar" src={cookies.get("foto")} ></img>
 
@@ -129,7 +129,7 @@ class HeaderAdmin extends Component {
           <a className="nav-link text-nav"  aria-current="page" href="/equipos">Equipos</a>
         </li> : ""}
       </ul>
-      <NavDropdown title=<span className='avatar'>{imgAvatar}<span className='mx-1'>{cookies.get("nombre")}</span></span> id="nav-dropdown">
+      <NavDropdown title=<span className='avatar mx-2'>{imgAvatar}<span className='mx-1'>{cookies.get("nombre")}</span></span> id="nav-dropdown">
         <NavDropdown.Item eventKey="4.1" variant="primary" onClick={()=>this.handleShow()}>Actualizar datos</NavDropdown.Item>
         <NavDropdown.Item eventKey="4.2" onClick={() => this.closeSesion()}>Cerrar sesion</NavDropdown.Item>
       </NavDropdown>

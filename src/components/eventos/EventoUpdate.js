@@ -268,7 +268,7 @@ export const EventoUpdate = ({ handleOpenModal, listarEventos }) => {
                                 <button className="btn btn-secondary">Guardar</button>
                             </div>
                             <div className='col-1 '>
-                                <a type="button" className="btn btn-danger" href='/'>Salir</a>
+                                <a type="button" className="btn btn-danger" href='/eventos'>Salir</a>
                             </div>
                         </div>
                     </form>
